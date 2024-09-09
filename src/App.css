@@ -1,0 +1,347 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  color: #ffffff;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #1F3D4E, #1F3D4E);
+  background-size: 400% 400%;
+  animation: gradientAnimation 20s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Apply box-sizing to include padding in the width */
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  padding-right: 20px;
+  padding-left: 20px;
+  overflow-x: hidden;
+}
+
+/* Sidebar with a fixed position */
+.sidebar {
+  width: 450px;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto; /* Allow scrolling within sidebar if content is too tall */
+  
+}
+
+/* Content that accounts for the fixed sidebar */
+.content {
+  margin-left: 450px; /* Match the width of the sidebar */
+  flex-grow: 1;
+  padding: 20px;
+  min-width: 0;
+  width: calc(100% - 450px);
+}
+
+/* Responsive Design: Stack sidebar and content vertically */
+@media (max-width: 970px) {
+  .container {
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .sidebar {
+    position: static; /* Remove fixed positioning on smaller screens */
+    width: 100%;
+    height: auto;
+    padding: 30px;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/* Ensure all content within sidebar and main content area is visible */
+.sidebar > *, .content > * {
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+.hover-box {
+  position: relative;
+  padding: 15px; /* Padding around the text */
+  border-radius: 10px; /* Roundness of the corners */
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.hover-box::before {
+  content: "";
+  position: absolute;
+  top: -10px; /* Adjust these values to extend the background beyond the box */
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background-color: #244558; /* Semitransparent blue-green color */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  border-radius: 15px; /* Match or adjust to the .hover-box border-radius */
+}
+
+.hover-box:hover {
+  transform: scale(1.01); /* Slightly enlarge the item on hover */
+}
+
+.hover-box:hover::before {
+  opacity: 1; /* Make the background visible on hover */
+}
+
+
+
+
+
+
+
+
+/* Title and subtitle styling */
+.title {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: left; /* Remove centering */
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: normal;
+  margin-top: 10px;
+  text-align: left; /* Remove centering */
+}
+
+.tagline {
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 10px;
+  text-align: left; /* Remove centering */
+}
+
+/* Navigation styles */
+.navigation ul {
+  padding-left: 0; /* Remove padding */
+  text-align: left; /* Remove centering */
+  list-style: none;
+}
+
+.navigation li {
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  cursor: pointer;
+  padding-bottom: 5px;
+  display: block;
+  width: fit-content;
+  position: relative;
+}
+
+.navigation li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.navigation li.active::before {
+  background-color: #ffffff;
+}
+
+.navigation li.active {
+  font-weight: bold;
+  color: #ffffff; /* Optional highlight color */
+}
+
+/* Social media icon styling */
+.social-media {
+  margin-top: 50px;
+}
+
+.social-media a {
+  font-size: 30px;
+  color: #ffffff;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #91F0F7;
+}
+
+/* Section styling (About, Experience, Projects) */
+section {
+  margin-bottom: 60px;
+  padding: 10px 0;
+  width: 100%; /* Ensure sections take full width */
+  text-align: left;
+}
+
+/* Restore the underline format for section headings */
+h3 {
+  font-size: 28px;
+  font-weight: bold;
+  padding-left: 15px;
+  margin-bottom: 0px;
+  margin-top: 40px;
+  color: #ffffff;
+  position: relative;
+  text-decoration: none;
+}
+
+h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 50px;
+  height: 2px;
+  background-color: #ffffff;
+  content: none;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 15px;
+  color: #ffffff;
+}
+
+h5 {
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 15px;
+  color: #ffffff;
+  margin-top: 0px;
+}
+
+h6 {
+  font-size: 16px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.custom-heading {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 15px;
+}
+
+.custom-heading2 {
+  font-size: 16px;
+  line-height: 1.6;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-bottom: 20px;
+  color: #B0BEC5; /* Light gray for paragraph text */
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #B0BEC5; /* Light gray for paragraph text */
+}
+
+/* Experience section and skill bubbles */
+.experience-section {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  margin-bottom: 5px;
+}
+
+.experience-content {
+  font-size: 18px;
+}
+
+.tech-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.skill-bubble {
+  background-color: #91F0F7;
+  color: #07131e;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.skill-bubble:hover {
+  background-color: #0F2336;
+  color: #91F0F7;
+  /*transform: scale(1.1); /* Grows slightly on hover */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+/* Project link styling */
+.project-link {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding-right: 18px;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.project-link::after {
+  content: '\2192'; /* Right arrow */
+  position: absolute;
+  right: -4px;
+  top: 0px;
+  font-size: 16px;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.project-link:hover {
+  color: #91F0F7;
+}
+
+.project-link:hover::after {
+  color: #91F0F7;
+  transform: translateX(5px); /* Move the arrow */
+}
+
+html {
+  scroll-behavior: smooth;
+}
