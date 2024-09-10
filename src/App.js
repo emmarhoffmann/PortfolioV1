@@ -92,7 +92,7 @@ function App() {
             <div className="custom-heading2">
               Hi, I'm Emma—a dedicated Computer Science student at St. Cloud State University, where I merge my love for technology and creativity to craft innovative solutions. Alongside my studies, I run Lakeline Design, a business where I create hand-drawn digital artwork and manage every aspect of the operation—from artistic design to optimizing e-commerce platforms and automating workflows.
             </div>
-            <a href="/assets/Emma-Hoffmann-Resume.pdf" target="_blank" rel="noopener noreferrer" className="project-link">
+            <a href="/Portfolio/assets/Emma-Hoffmann-Resume.pdf" target="_blank" rel="noopener noreferrer" className="project-link">
               <div className="custom-heading">View Full Resume</div>
             </a>
           </section>
