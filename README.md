@@ -1,6 +1,6 @@
 # Emma Hoffmann - Portfolio
 
-This is the personal portfolio website of **Emma Hoffmann**, showcasing my journey as a Computer Science student, business owner, and digital artist. This website highlights my professional experiences, technical skills, and various projects I’ve worked on, aiming to provide potential employers and collaborators with a comprehensive view of my expertise in software development, data science, and design.
+This is the older, original personal portfolio website of **Emma Hoffmann**, showcasing my journey as a Computer Science student, business owner, and digital artist. This website highlights my professional experiences, technical skills, and various projects I’ve worked on, aiming to provide potential employers and collaborators with a comprehensive view of my expertise in software development, data science, and design.
 
 https://emmarhoffmann.github.io/PortfolioV1/
 
